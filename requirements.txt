@@ -4,5 +4,5 @@ langchain-community
 openai
 faiss-cpu
 python-docx
-PyPDF2
+pypdf
 docx2txt
