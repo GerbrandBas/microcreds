@@ -22,7 +22,6 @@ def load_docs(file_path, file_ext):
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=150)
     return splitter.split_documents(documents)
 
-@st.cache_resource
 def build_vectorstore(chunks):
     embeddings = OpenAIEmbeddings()
     return FAISS.from_documents(chunks, embeddings)
