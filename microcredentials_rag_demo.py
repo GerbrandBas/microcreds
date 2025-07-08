@@ -14,7 +14,6 @@ os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 SUPPORTED_TYPES = {"pdf": PyPDFLoader, "docx": Docx2txtLoader, "txt": TextLoader}
 
-@st.cache_resource
 def load_docs(file_path, file_ext):
     loader_class = SUPPORTED_TYPES[file_ext]
     loader = loader_class(file_path)
