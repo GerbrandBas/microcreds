@@ -22,7 +22,7 @@ def load_docs(file_path, file_ext):
     return splitter.split_documents(documents)
 
 def build_vectorstore(chunks):
-    embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     return FAISS.from_documents(chunks, embeddings)
 
 st.sidebar.title("📄 Upload Knowledge Base")
